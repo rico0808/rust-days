@@ -1,14 +1,11 @@
 fn main() {
-    count(5);
+    let count = factorial(5);
+    println!("Factorial of 5 is {}", count);
 }
 
-fn count(num: i32) {
-    let mut count = num;
-    for item in 0..num {
-        if item <= 0 {
-            continue;
-        }
-        count *= item;
+fn factorial(num: u64) -> u64 {
+    match num {
+        0 => 1,
+        _ => factorial(num - 1) * num,
     }
-    println!("count is {}", count)
 }
